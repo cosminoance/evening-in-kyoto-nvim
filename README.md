@@ -1,11 +1,31 @@
 # pixeldrama-protanomaly-nvim
 
 A [Neovim](https://neovim.io) colorscheme: PixelDrama ProtAnomaly, a
-protanomaly-calibrated terminal theme built on Monokai Soda. Hand-written,
-mirroring the colors from the `pixeldrama-protanomaly` repo's
-`palette.yaml`/`chrome.yaml` -- that repo is the source of truth for the
-actual hex values and the story behind each one; this repo is just the
-Neovim port, packaged to install on its own.
+protanomaly-calibrated terminal theme inspired by Monokai Soda. 
+
+## Disclaimer
+
+Keep in mind that 'inspired by' in this case means 'I see it as similar', due to only seeing RED at about 30% saturation of what a normal vision would see. 
+
+For example, someone with this particularity would not distinguish bright green from yellow, or brown from dark green... or light pink from gray (which teens tend to notice, at least when I was in high-school :) )
+
+## Example
+![alt text](./png/example.png)
+
+## Shifts from Monokai Soda
+![alt text](./png/monokai_soda.png) Monokai Soda
+
+![alt text](./png/protanomaly.png) PixelDrama ProtAnomaly
+
+
+Take this with a grain of salt, as AI was telling me what the colours' families were.
+
+- Red channel: pink to dusty rose
+- Green channel: lime green to sage
+- Yellow channel: left orange but changed bright to amber 
+- Blue channel: violet to light navy
+- Magenta channel: was same as red, changed to low brightness violet
+
 
 ## Install
 
@@ -36,11 +56,6 @@ use {
 ```
 
 (packer has no separate `url` key — it accepts a full URL directly wherever the `"user/repo"` shorthand would otherwise go.)
-
-`lazy = false` / no lazy-loading trigger matters here -- a colorscheme has
-to be active before anything else renders, so it shouldn't wait on an
-event. `priority = 1000` makes lazy.nvim load it before other plugins that
-might set up highlights of their own.
 
 Without a plugin manager: clone this repo and add it to your
 runtimepath directly:
