@@ -65,6 +65,33 @@ vim.opt.rtp:prepend '/path/to/pixeldrama-protanomaly-nvim'
 vim.cmd.colorscheme 'pixeldrama_protanomaly'
 ```
 
+## Configuration
+
+Transparent background (lets a terminal's own opacity, e.g. WezTerm's
+`window_background_opacity`, show through the empty canvas — buffer body,
+floats, gutters — while syntax colors, `Search`/`Visual`, statusline, and
+popup menus stay fully opaque). Off by default; existing setups are
+unaffected.
+
+Set the default before `:colorscheme` runs:
+
+```lua
+vim.g.pixeldrama_protanomaly_transparent = true
+vim.cmd.colorscheme 'pixeldrama_protanomaly'
+```
+
+Toggle it at runtime from command-line mode, no setup required:
+
+```
+:lua require('pixeldrama_protanomaly').toggle_transparent()
+```
+
+Optionally, bind that call to a key of your choosing:
+
+```lua
+vim.keymap.set('n', '<leader>tt', require('pixeldrama_protanomaly').toggle_transparent, { desc = '[T]oggle [T]ransparency' })
+```
+
 ## What's covered
 
 Core syntax (`Comment`/`String`/`Function`/etc.), Treesitter `@`-captures,
