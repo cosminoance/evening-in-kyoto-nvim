@@ -1,4 +1,4 @@
--- PixelDrama ProtAnomaly -- highlight-group definitions.
+-- Evening in Kyoto -- highlight-group definitions.
 
 return function(p)
   local groups = {}

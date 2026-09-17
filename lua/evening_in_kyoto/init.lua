@@ -1,4 +1,4 @@
--- PixelDrama ProtAnomaly colorscheme
+-- Evening in Kyoto colorscheme
 local M = {}
 
 -- Groups that are pure empty canvas (no text/symbols of their own) — safe to
@@ -18,16 +18,16 @@ function M.load(opts)
     vim.cmd('hi clear')
   end
   vim.o.termguicolors = true
-  vim.g.colors_name = 'pixeldrama_protanomaly'
+  vim.g.colors_name = 'evening_in_kyoto'
 
-  local p = require('pixeldrama_protanomaly.palette')
-  local build_highlights = require('pixeldrama_protanomaly.highlights')
+  local p = require('evening_in_kyoto.palette')
+  local build_highlights = require('evening_in_kyoto.highlights')
 
   local hl = build_highlights(p)
 
   local transparent = opts.transparent
   if transparent == nil then
-    transparent = vim.g.pixeldrama_protanomaly_transparent
+    transparent = vim.g.evening_in_kyoto_transparent
   end
   if transparent then
     for _, group in ipairs(M.TRANSPARENT_CANVAS_GROUPS) do
@@ -63,14 +63,14 @@ function M.load(opts)
 end
 
 function M.get_palette()
-  return require('pixeldrama_protanomaly.palette')
+  return require('evening_in_kyoto.palette')
 end
 
--- Flips vim.g.pixeldrama_protanomaly_transparent and repaints immediately.
+-- Flips vim.g.evening_in_kyoto_transparent and repaints immediately.
 -- Bind it to a key yourself, e.g.:
---   vim.keymap.set('n', '<leader>tt', require('pixeldrama_protanomaly').toggle_transparent, { desc = '[T]oggle [T]ransparency' })
+--   vim.keymap.set('n', '<leader>tt', require('evening_in_kyoto').toggle_transparent, { desc = '[T]oggle [T]ransparency' })
 function M.toggle_transparent()
-  vim.g.pixeldrama_protanomaly_transparent = not vim.g.pixeldrama_protanomaly_transparent
+  vim.g.evening_in_kyoto_transparent = not vim.g.evening_in_kyoto_transparent
   M.load()
 end
 

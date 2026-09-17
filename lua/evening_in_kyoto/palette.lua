@@ -1,4 +1,4 @@
--- PixelDrama ProtAnomaly
+-- Evening in Kyoto
 
 return {
   bg = "#1a1a1a", -- palette.yaml background -- neutral near-black (was warm #241919)
